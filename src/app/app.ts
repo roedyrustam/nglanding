@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, HostListener, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar';
 import { Hero } from './components/hero/hero';
@@ -8,8 +8,6 @@ import { Stats } from './components/stats/stats';
 import { Testimonials } from './components/testimonials/testimonials';
 import { Contact } from './components/contact/contact';
 import { Footer } from './components/footer/footer';
-
-import { Component, HostListener, signal } from '@angular/core';
 import { AudioService } from './services/audio.service';
 
 @Component({
