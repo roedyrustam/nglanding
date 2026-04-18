@@ -1,0 +1,48 @@
+<section id="hero" class="hero-section" 
+         [style.--m-x]="mouseX()" 
+         [style.--m-y]="mouseY()">
+  <div class="interactive-glow"></div>
+  <div class="hero-background">
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+  </div>
+  
+  <div class="container hero-container">
+    <div class="hero-content" [appScrollReveal]="'up'">
+      <div class="badge">Accelerating Digital Talent</div>
+      <h1 class="neon-text" [appScrollReveal]="'blur'">Jembatan Strategis Antara <span class="accent">Talenta</span> & <span class="accent-2">Industri</span></h1>
+      <p>Pandu Talenta Digital hadir untuk memberdayakan generasi masa depan melalui pelatihan intensif, pendampingan ahli, dan koneksi industri yang tak tertandingi.</p>
+      
+      <div class="hero-actions">
+        <a href="#services" class="btn-main btn-cyber" appMagnetic>Eksplor Layanan</a>
+        <a href="#about" class="btn-outline btn-cyber" appMagnetic [strength]="20">Tentang Kami</a>
+      </div>
+    </div>
+    
+    <div class="hero-image" [appScrollReveal]="'scale'" [delay]="200">
+      <div class="glass-box">
+        <div class="stats-mini">
+          <div class="stat-item">
+            <span class="value">500+</span>
+            <span class="label">Alumni</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="value">50+</span>
+            <span class="label">Partner</span>
+          </div>
+        </div>
+        <!-- I would use generate_image here if I needed a specific mockup -->
+        <div class="hero-visual">
+          <app-hero-3d></app-hero-3d>
+          <div class="circle-animation"></div>
+          <div class="code-snippet">
+            <pre><code>talent.develop()
+industry.connect()
+future.build()</code></pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

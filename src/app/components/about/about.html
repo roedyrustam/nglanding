@@ -1,0 +1,40 @@
+<section id="about" class="about-section">
+  <div class="container about-container">
+    <div class="about-visual" [appScrollReveal]="'right'">
+      <div class="main-image-placeholder">
+        <img src="assets/images/about_visual.png" alt="Our Team" class="about-img">
+        <div class="abstract-shape"></div>
+        <div class="quality-badge">
+          <span class="number">10+</span>
+          <span class="label">Tahun Pengalaman</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="about-content" [appScrollReveal]="'left'" [delay]="100">
+      <span class="section-title">Tentang Kami</span>
+      <h2 class="neon-text" [appScrollReveal]="'blur'">Membangun Ekosistem <span class="accent">Talenta Digital</span> Unggul</h2>
+      <p class="lead">Pandu Talenta Digital bukan sekadar lembaga pelatihan. Kami adalah mitra strategis dalam perjalanan transformasi digital Anda.</p>
+      
+      <div class="mission-list">
+        <div class="mission-item">
+          <div class="icon-box">🎯</div>
+          <div class="text">
+            <h4>Misi Kami</h4>
+            <p>Memberikan akses pendidikan digital berkualitas tinggi bagi seluruh lapisan masyarakat Indonesia.</p>
+          </div>
+        </div>
+        
+        <div class="mission-item">
+          <div class="icon-box">🚀</div>
+          <div class="text">
+            <h4>Visi Kami</h4>
+            <p>Menjadi inspirator utama dalam mencetak talenta digital berstandar global yang siap kerja.</p>
+          </div>
+        </div>
+      </div>
+      
+      <button class="btn-more btn-cyber" appMagnetic [strength]="15">Baca Cerita Kami</button>
+    </div>
+  </div>
+</section>

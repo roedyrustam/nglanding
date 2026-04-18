@@ -1,0 +1,66 @@
+<section id="contact" class="contact-section">
+  <div class="container contact-container">
+    <div class="contact-info" [appScrollReveal]="'right'">
+      <span class="section-title">Hubungi Kami</span>
+      <h2 class="neon-text-purple" [appScrollReveal]="'blur'">Siap Melakukan <span class="accent">Lompatan Karir?</span></h2>
+      <p>Punya pertanyaan tentang program kami atau ingin berkolaborasi sebagai partner? Tim kami siap membantu Anda.</p>
+      
+      <div class="contact-details">
+        <div class="detail-item">
+          <div class="icon">📍</div>
+          <div>
+            <h4>Lokasi</h4>
+            <p>Jakarta Digital Hub, Level 5, Kuningan, Jakarta Selatan</p>
+          </div>
+        </div>
+        
+        <div class="detail-item">
+          <div class="icon">📧</div>
+          <div>
+            <h4>Email</h4>
+            <p>halo@pandutalenta.id</p>
+          </div>
+        </div>
+        
+        <div class="detail-item">
+          <div class="icon">📞</div>
+          <div>
+            <h4>WhatsApp</h4>
+            <p>+62 812-3456-7890</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="contact-form-container" [appScrollReveal]="'left'" [delay]="150">
+      <form class="contact-form">
+        <div class="form-group">
+          <label>Nama Lengkap</label>
+          <input type="text" placeholder="Masukkan nama Anda">
+        </div>
+        
+        <div class="form-group">
+          <label>Alamat Email</label>
+          <input type="email" placeholder="email@contoh.com">
+        </div>
+        
+        <div class="form-group">
+          <label>Pilihan Program</label>
+          <select>
+            <option>Pilih Program</option>
+            <option>Digital Bootcamp</option>
+            <option>Corporate Training</option>
+            <option>Lainnya</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label>Pesan</label>
+          <textarea rows="4" placeholder="Apa yang bisa kami bantu?"></textarea>
+        </div>
+        
+        <button type="submit" class="btn-submit btn-cyber" appMagnetic [strength]="20">Kirim Pesan</button>
+      </form>
+    </div>
+  </div>
+</section>

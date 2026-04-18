@@ -1,0 +1,37 @@
+<nav [class.scrolled]="isScrolled">
+  <div class="container nav-container">
+    <div class="logo">
+      <span class="logo-text">Pandu<span class="accent">Talenta</span></span>
+    </div>
+    
+    <ul class="nav-links">
+      <li><a href="#hero">Beranda</a></li>
+      <li><a href="#about">Tentang Kami</a></li>
+      <li><a href="#services">Layanan</a></li>
+      <li><a href="#testimonials">Testimoni</a></li>
+    </ul>
+    
+    <div class="nav-cta">
+      <button class="sound-toggle-btn" (click)="toggleSound()" [title]="audioService.isMuted() ? 'Turn Sound On' : 'Turn Sound Off'">
+        <span class="icon">{{ audioService.isMuted() ? '🔇' : '🔊' }}</span>
+      </button>
+      <a href="#contact" class="btn-primary btn-cyber" appMagnetic>Mulai Sekarang</a>
+    </div>
+
+    <button class="mobile-menu-btn" (click)="toggleMenu()">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-overlay" [class.active]="isMenuOpen" (click)="toggleMenu()">
+  <ul class="mobile-links">
+    <li><a href="#hero" (click)="toggleMenu()">Beranda</a></li>
+    <li><a href="#about" (click)="toggleMenu()">Tentang Kami</a></li>
+    <li><a href="#services" (click)="toggleMenu()">Layanan</a></li>
+    <li><a href="#testimonials" (click)="toggleMenu()">Testimoni</a></li>
+    <li><a href="#contact" (click)="toggleMenu()" class="btn-mobile">Mulai Sekarang</a></li>
+  </ul>
+</div>
