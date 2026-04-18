@@ -1,3 +1,5 @@
+import { Component, HostListener } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { AudioService } from '../../services/audio.service';
 
 @Component({

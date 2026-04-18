@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, OnDestroy, ViewChild, NgZone } from '@angular/core';
+import { Component, ElementRef, OnInit, OnDestroy, ViewChild, NgZone, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import * as THREE from 'three';
 
 @Component({
@@ -26,12 +27,14 @@ export class Hero3DComponent implements OnInit, OnDestroy {
   private model!: THREE.Group;
   private particles!: THREE.Points;
 
-  constructor(private ngZone: NgZone) {}
+  constructor(private ngZone: NgZone, @Inject(PLATFORM_ID) private platformId: any) {}
 
   ngOnInit() {
-    this.initThree();
-    this.createModel();
-    this.animate();
+    if (isPlatformBrowser(this.platformId)) {
+      this.initThree();
+      this.createModel();
+      this.animate();
+    }
   }
 
   private initThree() {
@@ -130,10 +133,14 @@ export class Hero3DComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    if (this.frameId) {
-      cancelAnimationFrame(this.frameId);
+    if (isPlatformBrowser(this.platformId)) {
+      if (this.frameId) {
+        cancelAnimationFrame(this.frameId);
+      }
+      window.removeEventListener('resize', this.onResize.bind(this));
+      if (this.renderer) {
+        this.renderer.dispose();
+      }
     }
-    window.removeEventListener('resize', this.onResize);
-    this.renderer.dispose();
   }
 }

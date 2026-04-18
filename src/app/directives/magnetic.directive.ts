@@ -1,3 +1,4 @@
+import { Directive, ElementRef, HostListener, Input, Renderer2 } from '@angular/core';
 import { AudioService } from '../services/audio.service';
 
 @Directive({

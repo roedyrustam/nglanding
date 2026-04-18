@@ -1,4 +1,5 @@
-import { Directive, ElementRef, Input, OnInit, Renderer2, OnDestroy } from '@angular/core';
+import { Directive, ElementRef, Input, OnInit, Renderer2, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Directive({
   selector: '[appScrollReveal]',
@@ -11,11 +12,20 @@ export class ScrollRevealDirective implements OnInit, OnDestroy {
 
   private observer: IntersectionObserver | null = null;
 
-  constructor(private el: ElementRef, private renderer: Renderer2) {}
+  constructor(
+    private el: ElementRef, 
+    private renderer: Renderer2,
+    @Inject(PLATFORM_ID) private platformId: any
+  ) {}
 
   ngOnInit() {
     this.prepareElement();
-    this.createObserver();
+    if (isPlatformBrowser(this.platformId)) {
+      this.createObserver();
+    } else {
+      // Fallback for SSR
+      this.renderer.addClass(this.el.nativeElement, 'reveal-active');
+    }
   }
 
   private prepareElement() {

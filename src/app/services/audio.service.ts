@@ -1,22 +1,27 @@
-import { Injectable, signal } from '@angular/core';
+import { Injectable, signal, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AudioService {
   private audioCtx: AudioContext | null = null;
-  public isMuted = signal(true); // Muted by default to respect browser policies
+  public isMuted = signal(true); // Muted by default
 
-  constructor() {
-    const saved = localStorage.getItem('isMuted');
-    if (saved !== null) {
-      this.isMuted.set(saved === 'true');
+  constructor(@Inject(PLATFORM_ID) private platformId: any) {
+    if (isPlatformBrowser(this.platformId)) {
+      const saved = localStorage.getItem('isMuted');
+      if (saved !== null) {
+        this.isMuted.set(saved === 'true');
+      }
     }
   }
 
   toggleMute() {
     this.isMuted.set(!this.isMuted());
-    localStorage.setItem('isMuted', this.isMuted().toString());
+    if (isPlatformBrowser(this.platformId)) {
+      localStorage.setItem('isMuted', this.isMuted().toString());
+    }
   }
 
   private initAudio() {

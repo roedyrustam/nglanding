@@ -1,3 +1,5 @@
+import { Component, HostListener, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 import { MagneticDirective } from '../../directives/magnetic.directive';
 import { Hero3DComponent } from './hero-3d';
