@@ -1,3 +1,4 @@
+/** Develop By Pandu Talenta Digital | Fullstack By Roedy rustam */
 import { Component, ElementRef, OnInit, OnDestroy, ViewChild, NgZone, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
 import * as THREE from 'three';

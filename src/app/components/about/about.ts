@@ -1,3 +1,4 @@
+/** Develop By Pandu Talenta Digital | Fullstack By Roedy rustam */
 import { Component } from '@angular/core';
 import { ScrollRevealDirective } from '../../directives/scroll-reveal.directive';
 import { MagneticDirective } from '../../directives/magnetic.directive';

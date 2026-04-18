@@ -1,3 +1,4 @@
+/** Develop By Pandu Talenta Digital | Fullstack By Roedy rustam */
 import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 

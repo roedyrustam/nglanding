@@ -1,3 +1,4 @@
+/** Develop By Pandu Talenta Digital | Fullstack By Roedy rustam */
 import { BootstrapContext, bootstrapApplication } from '@angular/platform-browser';
 import { App } from './app/app';
 import { config } from './app/app.config.server';

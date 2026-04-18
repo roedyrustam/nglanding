@@ -1,3 +1,4 @@
+/** Develop By Pandu Talenta Digital | Fullstack By Roedy rustam */
 import { Component, HostListener, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavbarComponent } from './components/navbar/navbar';

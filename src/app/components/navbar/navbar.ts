@@ -1,3 +1,4 @@
+/** Develop By Pandu Talenta Digital | Fullstack By Roedy rustam */
 import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AudioService } from '../../services/audio.service';
